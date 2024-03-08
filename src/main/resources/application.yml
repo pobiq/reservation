@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/study?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: studyuser
+    password: zerobase
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+
+  jwt:
+    secret: ZGF5b25lLXNwcmluZy1ib290LWRpdmlkZW5kLXByb2plY3QtdHV0b3JpYWwtand0LXNlY3JldC1rZXkK
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
